@@ -12,6 +12,7 @@ public class LapTrinhWeka {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
 //        MyKnowledgeModel model = new MyKnowledgeModel("D:\\KPDL\\DataWeka\\supermarket.arff");
@@ -39,11 +40,31 @@ public class LapTrinhWeka {
 //          model.mineAssociationRules();
 //          System.out.println(model.toString());
           
-          MyFPGrowthModel model = new MyFPGrowthModel("D:\\KPDL\\DataWeka\\supermarket.arff",
-                  "-P 2 -I -1 -N 10 -T 0 -C 0.7 -D 0.05 -U 1.0 -M 0.2",
-                  "-N -R first-last");
-          model.mineAssociationRules();
-          System.out.println(model.toString());
+//          MyFPGrowthModel model = new MyFPGrowthModel("D:\\KPDL\\DataWeka\\supermarket.arff",
+//                  "-P 2 -I -1 -N 10 -T 0 -C 0.7 -D 0.05 -U 1.0 -M 0.2",
+//                  "-N -R first-last");
+//          model.mineAssociationRules();
+//          System.out.println(model.toString());
+          
+//Train set & Test set
+//        RemovePercentage
+//        MyKnowledgeModel model = new MyKnowledgeModel(
+//                    "D:\\KPDL\\DataWeka\\iris.arff", null, null);
+//        model.trainset = model.divideTrainTest(model.dataset, 30, false);
+//        model.testset = model.divideTrainTest(model.dataset, 30, true);
+//        System.out.println(model);
+//        System.out.println(model.trainset.toSummaryString());
+//        System.out.println(model.testset.toSummaryString());
+        
+        
+//Bộ lọc Resample
+        MyKnowledgeModel model = new MyKnowledgeModel(
+                    "D:\\KPDL\\DataWeka\\iris.arff", null, null);
+        model.trainset = model.divideTrainTestRe(model.dataset, 70, false);
+        model.testset = model.divideTrainTestRe(model.dataset, 70, true);
+        System.out.println(model);
+        System.out.println(model.trainset.toSummaryString());
+        System.out.println(model.testset.toSummaryString());
     }
     
 }
