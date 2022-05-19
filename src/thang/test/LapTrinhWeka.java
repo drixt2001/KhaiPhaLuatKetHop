@@ -29,13 +29,14 @@ public class LapTrinhWeka {
 //          model.mineAssociationRules();
 //          System.out.println(model.toString());
 
-
+//Khai pha luat ket hop MyApriori
 //        MyAprioriModel model = new MyAprioriModel("D:\\KPDL\\DataWeka\\weather.numeric.arff",
 //                  "-N 10 -T 0 -C 0.9 -D 0.05 -U 1.0 -M 0.1 -S -1.0 -c -1",
 //                  "-R 2-3");
 //          model.mineAssociationRules();
 //          System.out.println(model.toString());
-          
+//
+//Khai pha luat ket hop MyFPGWrowth
 //          MyFPGrowthModel model = new MyFPGrowthModel("D:\\KPDL\\DataWeka\\supermarket.arff",
 //                  "-P 2 -I -1 -N 10 -T 0 -C 0.7 -D 0.05 -U 1.0 -M 0.2",
 //                  "-N -R first-last");
@@ -63,16 +64,22 @@ public class LapTrinhWeka {
 //        System.out.println(model.testset.toSummaryString());
 
 //Tree
-    MyDecisionTreeModel model = new MyDecisionTreeModel("D:\\KPDL\\DataWeka\\weather.numeric.arff", "-C 0.25 -M 2", null);
-    model.buildDecisionTree();
-    model.evaluaDecisionTree();
-    System.out.println(model);
+//    MyDecisionTreeModel model = new MyDecisionTreeModel("D:\\KPDL\\DataWeka\\weather.nominal.arff", 
+//            "-C 0.25 -M 2", null);
+//    model.buildDecisionTree();
+//    model.evaluaDecisionTree();
+//    System.out.println(model);
     
 //Luu mo hinh
-//    model.saveModel("D:\\KPDL\\DataWeka\\tree\\testdecisons.model", model.tree);
+//    model.saveModel("D:\\KPDL\\DataWeka\\tree\\w.model", model.tree);
 //tai mo hinh và su dung
-//    model.tree = (J48)model.loadModel("D:\\KPDL\\DataWeka\\tree\\testdecisons.model");
+//    model.tree = (J48)model.loadModel("D:\\KPDL\\DataWeka\\tree\\w.model");
 //    model.predictClassLabel(model.testset);
     }
+    
+    
+//NaiveBayes
+    MyNaiveBayesModel a = new MyNaiveBayesModel();
+    
     
 }

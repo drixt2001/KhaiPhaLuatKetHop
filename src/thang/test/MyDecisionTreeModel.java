@@ -40,12 +40,12 @@ public class MyDecisionTreeModel extends MyKnowledgeModel{
     
     public void evaluaDecisionTree() throws Exception{
         Random rd = new Debug.Random(1);
-        int folds = 10; 
+        int folds = 4; 
         Evaluation eval = new Evaluation(this.trainset);
-        eval.evaluateModel(tree, this.testset);
-        System.out.println(eval.toSummaryString("ket qua danh gia mo hinh 10-fold cross-validation \n",false));
-//        eval.crossValidateModel(tree, this.testset, folds, rd);
+//        eval.evaluateModel(tree, this.testset);
 //        System.out.println(eval.toSummaryString("ket qua danh gia mo hinh 10-fold cross-validation \n",false));
+        eval.crossValidateModel(tree, this.testset, folds, rd);
+        System.out.println(eval.toSummaryString("ket qua danh gia mo hinh 10-fold cross-validation \n",false));
         
         
     }
