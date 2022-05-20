@@ -75,11 +75,14 @@ public class LapTrinhWeka {
 //tai mo hinh và su dung
 //    model.tree = (J48)model.loadModel("D:\\KPDL\\DataWeka\\tree\\w.model");
 //    model.predictClassLabel(model.testset);
-    }
-    
-    
+
 //NaiveBayes
-    MyNaiveBayesModel a = new MyNaiveBayesModel();
+    MyNaiveBayesModel model = new MyNaiveBayesModel();
+    model.BuildNaiveBayes("D:\\KPDL\\DataWeka\\File train test\\iris-train.arff");
+    model.evaluaBayes("D:\\KPDL\\DataWeka\\File train test\\iris-test.arff");
+    model.predictClassLabel("D:\\KPDL\\DataWeka\\File train test\\iris-unlabel.arff",
+                        "D:\\KPDL\\DataWeka\\File train test\\iris-predictNb.arff");
+    System.out.println(model);
     
-    
+    }
 }

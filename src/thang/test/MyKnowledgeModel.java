@@ -127,7 +127,7 @@ public class MyKnowledgeModel {
     
     public void setTestset(String filename) throws Exception{
         DataSource testsource = new DataSource(filename);
-            this.trainset = testsource.getDataSet();
+            this.testset = testsource.getDataSet();
     }
     
     @Override
