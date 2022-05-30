@@ -77,12 +77,29 @@ public class LapTrinhWeka {
 //    model.predictClassLabel(model.testset);
 
 //NaiveBayes
-    MyNaiveBayesModel model = new MyNaiveBayesModel();
-    model.BuildNaiveBayes("D:\\KPDL\\DataWeka\\File train test\\iris-train.arff");
-    model.evaluaBayes("D:\\KPDL\\DataWeka\\File train test\\iris-test.arff");
-    model.predictClassLabel("D:\\KPDL\\DataWeka\\File train test\\iris-unlabel.arff",
-                        "D:\\KPDL\\DataWeka\\File train test\\iris-predictNb.arff");
-    System.out.println(model);
-    
+//    MyNaiveBayesModel model = new MyNaiveBayesModel();
+//    model.BuildNaiveBayes("D:\\KPDL\\DataWeka\\File train test\\iris-train.arff");
+//    model.evaluaBayes("D:\\KPDL\\DataWeka\\File train test\\iris-test.arff");
+//    model.predictClassLabel("D:\\KPDL\\DataWeka\\File train test\\iris-unlabel.arff",
+//                        "D:\\KPDL\\DataWeka\\File train test\\iris-predictNb.arff");
+//    System.out.println(model);
+
+//Mo hinh mang no-ron
+//        MyNeuralNetworkModel model = new MyNeuralNetworkModel("","-L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a -R", null);
+//        model.buildNeuralNetwork("D:\\KPDL\\DataWeka\\File train test\\iris-train.arff");
+//        model.evaluateNeuralNetwork("D:\\KPDL\\DataWeka\\File train test\\iris-test.arff");
+//        model.predictClassLabel("D:\\KPDL\\DataWeka\\File train test\\iris-unlabel.arff", 
+//                                "D:\\KPDL\\DataWeka\\File train test\\iris-predict_ann.arff");
+//        System.out.println(model);
+
+//Mo hinh SVM
+        MySVMModel model = new MySVMModel("",
+                            "-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007\" -calibrator \"weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4\"",
+                            null);
+        model.builSVM("D:\\KPDL\\DataWeka\\File train test\\iris-train.arff");
+        model.evaluateSVM("D:\\KPDL\\DataWeka\\File train test\\iris-test.arff");
+        model.predictClassLable("D:\\KPDL\\DataWeka\\File train test\\iris-unlabel.arff", 
+                                "D:\\KPDL\\DataWeka\\File train test\\iris-predictNbs.arff");
+        System.out.println(model);
     }
 }
